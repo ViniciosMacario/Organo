@@ -2,7 +2,7 @@
 
 1º O que é o Organo?
 
-- O Organo é um projeto totalmente em ReactJS que visa `fornece ajuda na adiministração de equipes de uma empresa`,
+- O Organo é um projeto totalmente em ReactJS que visa `fornecer ajuda na adiministração de equipes de uma empresa`,
 onde **é possivel criar novas equipes,adicionar membros,favoritar as informações mais importante.**
 
 2º Qual o objetivo desse projeto?
