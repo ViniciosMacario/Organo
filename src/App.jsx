@@ -1,6 +1,8 @@
 import { Main } from "./App.js";
+import Footer from "./components/Footer.jsx";
 import Form from "./components/Form.jsx";
 import Header from "./components/Header.jsx";
+import Staff from "./components/Staff.jsx";
 
 function App() {
   return (
@@ -10,16 +12,9 @@ function App() {
         <section>
           <Form/>
         </section>
-        <section>
-          Equipes
-          <div>
-            
-          </div>
-        </section>
+      <Staff/>
       </Main>
-      <footer>
-        Rodapé
-      </footer>
+      <Footer/>
     </>
   )
 }

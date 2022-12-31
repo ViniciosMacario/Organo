@@ -2,8 +2,8 @@ import React from 'react'
 import { ButtonComp } from './Button';
 
 
-function Button() {
-  return <ButtonComp>Criar Time</ButtonComp>
+function Button({text}) {
+  return <ButtonComp>{text}</ButtonComp>
 }
 
 export default Button;
