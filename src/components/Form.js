@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
+  max-width: 550px;
+  margin: 0 auto;
 `
 
 export const ButtonsGroup = styled.div`
-  position: relative;
-  top: 5px;
-  z-index: -1;
+  margin-top: 25px;
+
   display: flex;
   justify-content: center;
   gap: 5px;
@@ -20,15 +20,14 @@ export const ButtonsGroup = styled.div`
 `
 
 export const FormCreateEquip = styled.form`
-  padding: 25px;
-  margin: 0 auto;
-  max-width: 600px;
+  padding: 20px;
   
   display: flex;
   flex-direction: column;
   gap: 25px;
 
-  background-color: black;
+  border-radius: 10px;
+  background-color: #D9D9D9;
 
   div:nth-of-type(1){
     display: flex;
@@ -38,19 +37,23 @@ export const FormCreateEquip = styled.form`
 
 
   > button{
-    margin: 0 auto;
-    background-color: green;
+    margin-inline: auto;
+    margin-top: 50px;
   }
 `
 
 export const FormAddMember = styled.form`
-  padding: 25px;
-  margin: 0 auto;
-  max-width: 600px;
-
+  padding: 20px;
+  
   display: flex;
   flex-direction: column;
   gap: 25px;
 
-  background-color: green;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+
+  > button{
+    margin-inline: auto;
+    margin-top: 50px;
+  }
 `

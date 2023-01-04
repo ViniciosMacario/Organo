@@ -1,10 +1,11 @@
 import React from 'react'
 import { TextAreaComp } from './TextArea'
+import { Label } from './Input.js'
 
 function TextArea() {
   return (
     <>
-      <label>Descrição da Equipe:</label>
+      <Label>Descrição da Equipe:</Label>
       <TextAreaComp 
         placeholder='Digite aqui!' 
         name='text'

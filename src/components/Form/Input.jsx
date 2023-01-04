@@ -1,13 +1,12 @@
 import React from 'react'
 import { InputComp,Label } from './Input.js'
 
-function Input({type, placeholder, name,label, required = false }) {
+function Input({type, placeholder, name,labelText, required = false }) {
   return (
     <>
-      <Label>{label}</Label>
+      <Label>{labelText}</Label>
       <InputComp 
         type={type} 
-        value={''} 
         name={name}
         placeholder={placeholder}
         onChange={''}

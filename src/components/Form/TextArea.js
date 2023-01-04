@@ -1,8 +1,17 @@
 import styled from "styled-components";
 
+
 export const TextAreaComp = styled.textarea`
   height: 250px;
-  width: 100%;
+  padding: 5px;
+
   resize: none;
-  background-color: aqua;
+  color: white;
+  background-color: rgba(98, 92, 95, 0.8);
+
+  ::placeholder{
+    color: white;
+    font-size: 14px;
+
+  }
 `

@@ -12,28 +12,40 @@ function Form() {
         <Button text='Adicionar Colaborador'/>
         <Button text='Criar Time'/>
       </ButtonsGroup>
+
       <Container>
-      <FormCreateEquip>
-        <div>
-          <Input 
-            type='text' 
-            placeholder='Digite o nome da Equipe'
-            label='Nome:'
-            required
-          />
-          <TextArea/>
-          <input type='color'/>
-        </div>
-          <Button text='Criar Time'/>
-      </FormCreateEquip>
+        {/* <FormCreateEquip>
+          <div>
+            <Input 
+              type='text' 
+              placeholder='Digite o nome da Equipe'
+              labelText='Nome:'
+              required
+            />
+            <TextArea/>
+            <Input 
+              type='color' 
+              labelText='Nome:'
+            />
+          </div>
+            <Button text='Criar Time'/>
+        </FormCreateEquip> */}
 
       <FormAddMember>
-        <div>
-        <Input label='Nome:' placeholder='Digite o nome'/>
-        <Input label='Cargo:' placeholder='Digite o Cargo'/>
+        <Input 
+          type='text' 
+          labelText='Nome:' 
+          placeholder='Digite o nome'
+        />
+        <Input 
+          type='text' 
+          labelText='Cargo:' 
+          placeholder='Digite o Cargo'
+        />
+        <Select
+          labelText='Selecione uma Equipe:'
+        />
 
-        <Select/>
-        </div>
         
         <Button text='Adicionar Colaborador'/>
 

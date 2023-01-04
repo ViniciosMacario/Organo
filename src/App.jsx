@@ -12,9 +12,9 @@ function App() {
         <section>
           <Form/>
         </section>
-      <Staff/>
+      {/* <Staff/> */}
       </Main>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   )
 }

@@ -2,5 +2,5 @@
 export const TextColor = '#ffff';
 
 //Buttons - Colors
-export const BackgroundButton = '#0f0087'
-export const BackgroundButtonHover = '#23652f';
+export const BackgroundButton = 'rgba(88, 39, 245, 0.79)';
+export const BackgroundButtonHover = 'rgba(88, 39, 245, 1)';
