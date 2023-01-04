@@ -1,12 +1,15 @@
 import styled from "styled-components";
 
+export const ContainerMax = styled.div`
+  margin-block: 50px;
+`
+
 export const Container = styled.div`
   max-width: 550px;
   margin: 0 auto;
 `
 
 export const ButtonsGroup = styled.div`
-  margin-top: 25px;
 
   display: flex;
   justify-content: center;

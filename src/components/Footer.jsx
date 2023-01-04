@@ -1,12 +1,13 @@
 import React from 'react'
+import { FooterComp } from './Footer'
 
 function Footer() {
   return (
-    <div>
+    <FooterComp>
       Logo
       Links
       Midia Social
-    </div>
+    </FooterComp>
   )
 }
 

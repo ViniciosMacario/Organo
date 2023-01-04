@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const CardComp = styled.div`
-  width: 250px;
-
+  min-width: 250px;
 
   display: flex;
   flex-direction: column;
@@ -26,8 +25,9 @@ export const UserData = styled.div`
   text-align: center;
   margin-bottom: 20px;
 
+  color: #fff;
   .Photo_User{
-    width: 130px;
+    width: 120px;
     margin-bottom: 15px;
     border-radius: 50%;
   }

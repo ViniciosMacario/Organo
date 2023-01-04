@@ -1,4 +1,4 @@
-import { Main } from "./App.js";
+import { Main, SubTitle } from "./App.js";
 import Footer from "./components/Footer.jsx";
 import Form from "./components/Form.jsx";
 import Header from "./components/Header.jsx";
@@ -12,9 +12,14 @@ function App() {
         <section>
           <Form/>
         </section>
-      {/* <Staff/> */}
+
+        <section>
+          <SubTitle>Minha Organização</SubTitle>
+          <Staff/>
+          <Staff/>
+        </section>
       </Main>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   )
 }

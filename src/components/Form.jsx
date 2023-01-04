@@ -2,12 +2,12 @@ import React from 'react'
 import Button from './Form/Button.jsx'
 import Input from './Form/Input.jsx'
 import TextArea from './Form/TextArea.jsx'
-import { FormCreateEquip, FormAddMember, ButtonsGroup, Container } from './Form.js'
+import { FormCreateEquip, FormAddMember, ButtonsGroup, Container, ContainerMax } from './Form.js'
 import Select from './Form/Select.jsx'
 
 function Form() {
   return (
-    <> 
+    <ContainerMax> 
       <ButtonsGroup>
         <Button text='Adicionar Colaborador'/>
         <Button text='Criar Time'/>
@@ -51,7 +51,7 @@ function Form() {
 
       </FormAddMember>
       </Container>
-    </>
+    </ContainerMax>
   )
 }
 

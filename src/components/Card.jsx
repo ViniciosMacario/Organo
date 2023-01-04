@@ -7,7 +7,7 @@ function Card() {
     <CardComp>
       <div></div>
       <UserData>
-      <img className='Photo_User' src={Vinicios} alt=''/>
+        <img className='Photo_User' src={Vinicios} alt=''/>
         <p>Vinicios Macario</p>
         <p>Front-end</p>
       </UserData>

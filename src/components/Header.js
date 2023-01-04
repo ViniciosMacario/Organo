@@ -5,7 +5,6 @@ export const HeaderComp = styled.header`
   background-color: blue;
   color: white;
   padding-block: 50px;
-  margin-bottom: 50px;
 
   h1{
     padding-block: 30px;
