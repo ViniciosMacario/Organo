@@ -41,7 +41,6 @@ export const FormCreateEquip = styled.form`
 
   > button{
     margin-inline: auto;
-    margin-top: 50px;
   }
 `
 

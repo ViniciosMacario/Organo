@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from './Form/Button.jsx'
 import Input from './Form/Input.jsx'
 import TextArea from './Form/TextArea.jsx'
@@ -6,15 +6,27 @@ import { FormCreateEquip, FormAddMember, ButtonsGroup, Container, ContainerMax }
 import Select from './Form/Select.jsx'
 
 function Form() {
+  const [Time, SetTime] = useState(false);
+  
+  function aoFormAddMemberClick()
+  {
+    SetTime(true)
+  }
+  function aoCreateTimeClick()
+  {
+    SetTime(false)
+  }
+
   return (
     <ContainerMax> 
       <ButtonsGroup>
-        <Button text='Adicionar Colaborador'/>
-        <Button text='Criar Time'/>
+        <Button aoClicar={aoFormAddMemberClick} text='Adicionar Colaborador'/>
+        <Button aoClicar={aoCreateTimeClick} text='Criar Time'/>
       </ButtonsGroup>
 
+
       <Container>
-        {/* <FormCreateEquip>
+      {!Time && (<FormCreateEquip>
           <div>
             <Input 
               type='text' 
@@ -29,27 +41,31 @@ function Form() {
             />
           </div>
             <Button text='Criar Time'/>
-        </FormCreateEquip> */}
+        </FormCreateEquip>)
+      }
 
-      <FormAddMember>
-        <Input 
-          type='text' 
-          labelText='Nome:' 
-          placeholder='Digite o nome'
-        />
-        <Input 
-          type='text' 
-          labelText='Cargo:' 
-          placeholder='Digite o Cargo'
-        />
-        <Select
-          labelText='Selecione uma Equipe:'
-        />
+      {Time && (
+        <FormAddMember>
+          <Input 
+            type='text' 
+            labelText='Nome:' 
+            placeholder='Digite o nome'
+            required
+          />
+          <Input 
+            type='text' 
+            labelText='Cargo:' 
+            placeholder='Digite o Cargo'
+            required
+          />
+          <Select
+            labelText='Selecione uma Equipe:'
+            
+          />
 
-        
-        <Button text='Adicionar Colaborador'/>
-
-      </FormAddMember>
+          <Button text='Adicionar Colaborador'/>
+        </FormAddMember>)
+      }
       </Container>
     </ContainerMax>
   )

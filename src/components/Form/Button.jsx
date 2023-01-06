@@ -2,8 +2,8 @@ import React from 'react'
 import { ButtonComp } from './Button';
 
 
-function Button({text}) {
-  return <ButtonComp>{text}</ButtonComp>
+function Button({text, aoClicar}) {
+  return <ButtonComp onClick={aoClicar}>{text}</ButtonComp>
 }
 
 export default Button;
