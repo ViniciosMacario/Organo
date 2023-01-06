@@ -7,13 +7,13 @@ function Footer() {
   return (
     <FooterComp>
       <h3>Logo</h3>
-      Links
       <ListIcones 
         NameIcon1={Icones('instagram')}
         NameIcon2={Icones('facebook')}
         NameIcon3={Icones('discord')}
         NameIcon4={Icones('linkedin')}
       />
+      <p>Copyright &copy; 2023 Vinicios Macario</p>
     </FooterComp>
   )
 }

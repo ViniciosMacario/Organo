@@ -20,4 +20,5 @@ export const Members = styled.div`
   display: flex;
   gap: 30px;
   overflow-x:  scroll;
+  scroll-snap-type: x mandatory;
 `
