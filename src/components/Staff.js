@@ -24,10 +24,17 @@ export const Members = styled.div`
   padding-bottom: 25px;
 
   display: flex;
+
   gap: 30px;
 
-  overflow-x:  scroll;
+  overflow-x: auto;
+  scroll-padding: 25px;
   scroll-snap-type: x mandatory;
+  /* background-color: black; */
+
+  @media (min-width: 1440px){
+    justify-content: center;
+  }
 
   ::-webkit-scrollbar{
     height: 12px;

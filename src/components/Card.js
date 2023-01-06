@@ -8,6 +8,7 @@ export const CardComp = styled.div`
   gap: 35px;
   justify-content: center;
 
+  scroll-snap-align: none start;
   border-radius: 5px;
   background-color: black;
 

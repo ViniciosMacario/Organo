@@ -7,7 +7,13 @@ import Select from './Form/Select.jsx'
 
 function Form() {
   const [Time, SetTime] = useState(false);
-  
+  const [handleInputTeste, setHandleInput] = useState();
+
+  console.log(handleInputTeste)
+
+
+
+  //Funções responsavel por deixar visivel e invisivel os Formulário baseado no Click.
   function aoFormAddMemberClick()
   {
     SetTime(true)
@@ -50,6 +56,7 @@ function Form() {
             type='text' 
             labelText='Nome:' 
             placeholder='Digite o nome'
+            handleOnChange={(e) => setHandleInput(e.target.value)}
             required
           />
           <Input 

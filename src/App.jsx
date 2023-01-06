@@ -17,6 +17,7 @@ function App() {
           <SubTitle>Minha Organização</SubTitle>
           <Staff/>
           <Staff/>
+          <Staff/>
         </section>
       </Main>
       <Footer/>

@@ -6,7 +6,7 @@ function Select({labelText}) {
     <>
       <label >{labelText}</label>
         <SelectComp name="" id="" required>
-        <option value={0} selected>Selecionar</option>
+        <option value={0} defaultValue>Selecionar</option>
         <option value={1}>1</option>
         <option value={2}>2</option>
         <option value={3}>3</option>

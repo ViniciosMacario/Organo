@@ -19,10 +19,6 @@ function Staff() {
         <Card />
         <Card />
         <Card />        
-        <Card />
-        <Card />        
-        <Card />
-        <Card />
       </Members>
     </Container>
   )
