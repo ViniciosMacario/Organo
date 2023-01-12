@@ -1,0 +1,38 @@
+{
+  "equipes": [
+    {
+      "id": "1",
+      "nome": "Front-end",
+      "colaboradores": [{
+        "id": "2",
+        "nome": "Vinicios",
+        "cargo": "Desenvolvedor"
+      },
+      {
+        "id": "1",
+        "nome": "Matheus",
+        "cargo": "Lider de Projeto"
+      }],
+      "descricao": "Equipe responsável pelo Desenvolvimento da UI web do Projeto Organo", 
+      "color": "#191970"
+    },
+    {
+      "id": "2",
+      "nome": "Back-end",
+      "colaboradores": [
+        {
+          "id": "1",
+          "nome": "Sofia",
+          "cargo": "Desenvolvedora"
+        },
+        {
+          "id": "2",
+          "nome": "Marcos",
+          "cargo": "Lider de Projeto"
+        }
+      ],
+      "descricao": "Equipe responsável pelo Desenvolvimento da Api do Projeto Organo",
+      "color": "#00BFFF"
+    }
+  ] 
+}

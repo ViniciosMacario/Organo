@@ -5,7 +5,6 @@ export const Container = styled.section`
   padding: 25px;
 
   color: ${TextColor};
-  background-color: rgba(88, 39, 245, 0.79);
 
   > div:nth-of-type(1){
     margin-block: 25px 50px;

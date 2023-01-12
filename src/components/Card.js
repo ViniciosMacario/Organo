@@ -10,16 +10,15 @@ export const CardComp = styled.div`
 
   scroll-snap-align: none start;
   border-radius: 5px;
-  background-color: black;
+  background-color: #363636;
+`
 
-  div:nth-of-type(1){
-    border-radius: 5px 5px 0px 0px;
-    width: 100%;
-    height: 45px;
-    background-color: white;
-  }
-
-
+export const ColorTop = styled.div`
+  border-radius: 5px 5px 0px 0px;
+  width: 100%;
+  height: 45px;
+  background-color: ${props => props.color};
+  filter: contrast(10);
 `
 
 export const UserData = styled.div`

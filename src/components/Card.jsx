@@ -1,15 +1,15 @@
 import React from 'react'
-import { CardComp, UserData } from './Card'
+import { CardComp, UserData, ColorTop } from './Card'
 import Vinicios from '../img/Vini.jpg'
 
-function Card() {
+function Card({nome, cargo, color}) {
   return (
     <CardComp>
-      <div></div>
+      <ColorTop color={color}></ColorTop>
       <UserData>
         <img className='Photo_User' src={Vinicios} alt=''/>
-        <p>Vinicios Macario</p>
-        <p>Front-end</p>
+        <p>{nome}</p>
+        <p>{cargo}</p>
       </UserData>
     </CardComp>
   )
