@@ -14,22 +14,21 @@ function App() {
       .then(response => response.json())
       .then(data => setStaffData(data))
   }, [])
-  
+
   return (
     <>
       <Header/>
       <Main>
         <section>
-          <Form/>
+          <Form staffData={staffData} />
         </section>
 
         <section>
           <SubTitle>Minha Organização</SubTitle>
           {staffData.map(data => {
-            return ( <Staff name={data.nome} colaboradores={data.colaboradores} colorBg={data.color} cargo={data.colaboradores}/> )
+            return ( <Staff key={data.id} name={data.nome} colaboradores={data.colaboradores} colorBg={data.color} cargo={data.colaboradores}/> )
             })
           }
-
         </section>
       </Main>
       <Footer/>

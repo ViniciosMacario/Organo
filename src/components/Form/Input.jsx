@@ -1,7 +1,7 @@
 import React from 'react'
 import { InputComp,Label } from './Input.js'
 
-function Input({type, placeholder, name,labelText, required = false, handleOnChange, }) {
+function Input({type, placeholder, name,labelText, required = false, handleInput, }) {
   return (
     <>
       <Label htmlFor={name}>{labelText}</Label>
@@ -9,7 +9,7 @@ function Input({type, placeholder, name,labelText, required = false, handleOnCha
         type={type} 
         name={name}
         placeholder={placeholder}
-        onChange={handleOnChange}
+        onChange={handleInput}
         required={required}
       />
     </>

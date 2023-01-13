@@ -3,7 +3,6 @@ import { TextColor } from "./Design/Colors";
 
 export const Container = styled.section`
   padding: 25px;
-
   color: ${TextColor};
 
   > div:nth-of-type(1){
