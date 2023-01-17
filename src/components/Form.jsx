@@ -6,7 +6,7 @@ import { FormCreateEquip, FormAddMember, ButtonsGroup, Container, ContainerMax }
 import Select from './Form/Select.jsx'
 
 
-function Form({staffData}) {
+function Form( { staffData } ) {
   //Controle da renderização dos formulários baseado no Click
   const [Time, SetTime] = useState(false);
   // Salvando os valores digitados nos inputs do formulário.
@@ -45,30 +45,39 @@ function Form({staffData}) {
 
 
 
-  const [escolha, setEscolha] = useState();
+  const [id, setId] = useState();
 
   
   const [handleInputColaborador, setHandleInputColaborador] = useState();
   const [handleInputCargo, setHandleInputCargo] = useState();
 
   //Dados do novo Colaborador
-  const colaborador = {
+  const novoColaborador = {
     id: "",
     nome: handleInputColaborador,
     cargo: handleInputCargo,
   }
-  // console.log(staffData)
 
-  const Array = staffData.find(data => {
-    return data.nome === escolha;
-  })
-  console.log(Array)
+  const [teste, setTeste] = useState({});
+  console.log(teste)
 
-  function addColaborador()
+  function addColaborador(e)
   {
-    const Array = staffData.find(data => {
-      return data.nome === escolha;
+    e.preventDefault()
+    //Verificar se usuário escolheu uma equipe, caso não, deve ser bloqueado e enviado uma informação.
+    const dataObj =  staffData.find((element) => element.id === id);
+    dataObj.colaboradores.push(novoColaborador);
+    
+
+    fetch(`http://localhost:3000/equipes/${id}`,{
+      method: "PATCH",
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(dataObj)
     })
+    .then((response) => console.log(response))
+    .catch((e) => console.log(e))
   }
 
 
@@ -121,7 +130,7 @@ function Form({staffData}) {
           <Select
             labelText='Selecione uma Equipe:'
             options={staffData}
-            handleSelect={e => setEscolha(e.target.value)}
+            handleSelect={e => setId(e.target.value)}
           />
 
           <Button text='Adicionar Colaborador' aoClicar={addColaborador}/>

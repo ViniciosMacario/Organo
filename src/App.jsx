@@ -14,7 +14,7 @@ function App() {
       .then(response => response.json())
       .then(data => setStaffData(data))
   }, [])
-
+  
   return (
     <>
       <Header/>
