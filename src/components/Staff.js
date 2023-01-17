@@ -18,6 +18,11 @@ export const Container = styled.section`
   }
 `
 
+export const Icon = styled.img`
+  cursor: pointer;
+`
+
+
 export const Members = styled.div`
   padding-bottom: 25px;
 

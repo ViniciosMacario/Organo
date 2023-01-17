@@ -5,14 +5,14 @@
       "nome": "Front-end",
       "colaboradores": [
         {
-          "id": "2",
+          "id": "c1fbf717-dc18-4b10-80c9-4f45ba2c28be",
           "nome": "Vinicios",
-          "cargo": "Desenvolvedor"
+          "cargo": "Líder do Projeto"
         },
         {
-          "id": "1",
-          "nome": "Matheus",
-          "cargo": "Lider de Projeto"
+          "id": "86e99488-d788-45b4-82cc-a1edf5d7eebd",
+          "nome": "Bruno",
+          "cargo": "Desenvolvedor"
         }
       ],
       "descricao": "Equipe responsável pelo Desenvolvimento da UI web do Projeto Organo",
@@ -23,18 +23,31 @@
       "nome": "Back-end",
       "colaboradores": [
         {
-          "id": "1",
-          "nome": "Sofia",
-          "cargo": "Desenvolvedora"
+          "id": "24a82f86-b9b7-4563-99fc-fe8be7083c27",
+          "nome": "Vinicios",
+          "cargo": "Líder do Projeto"
         },
         {
-          "id": "2",
-          "nome": "Marcos",
-          "cargo": "Lider de Projeto"
+          "id": "a88c758f-0ba6-4ce8-8037-212ffc1fd6de",
+          "nome": "Matheus",
+          "cargo": "Testador"
         }
       ],
       "descricao": "Equipe responsável pelo Desenvolvimento da Api do Projeto Organo",
       "color": "#00BFFF"
+    },
+    {
+      "id": "9f556a23-c4d7-4c9c-a9ba-561a19577df0",
+      "nome": "Segurança",
+      "colaboradores": [
+        {
+          "id": "c6b47481-aad8-4ca5-8f81-2b11495ed920",
+          "nome": "teste",
+          "cargo": "teste"
+        }
+      ],
+      "descricao": "teste",
+      "color": "#bb259b"
     }
   ]
 }

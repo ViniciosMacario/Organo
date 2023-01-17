@@ -4,25 +4,28 @@ import Input from './Form/Input.jsx'
 import TextArea from './Form/TextArea.jsx'
 import { FormCreateEquip, FormAddMember, ButtonsGroup, Container, ContainerMax } from './Form.js'
 import Select from './Form/Select.jsx'
-
+import {v4 as uuid4} from 'uuid'
 
 function Form( { staffData } ) {
   //Controle da renderização dos formulários baseado no Click
   const [Time, SetTime] = useState(false);
-  // Salvando os valores digitados nos inputs do formulário.
+
+
+  // Salvando os valores digitados nos inputs do formulário da nova equipe.
   const [handleInput, setHandleInput] = useState();
-  // Salvando os valores digitados no 'TextArea'formulário.
   const [handleTextAreaState, sethandleTextAreaState] = useState();
   const [handleColor, setHandleColor] = useState();
 
+  //Dados da nova Equipe
   const staff = {
-    id: "",
+    id: uuid4(),
     nome: handleInput,
     colaboradores: [],
     descricao: handleTextAreaState,
     color: handleColor,
   }
-  async function submit()
+
+  function createStaff()
   {
     fetch("http://localhost:3000/equipes", {
       method: 'POST',
@@ -43,32 +46,25 @@ function Form( { staffData } ) {
     SetTime(false)
   }
 
-
-
+  // Salvando os valores digitados nos inputs do formulário do novo usuário.
   const [id, setId] = useState();
-
-  
   const [handleInputColaborador, setHandleInputColaborador] = useState();
   const [handleInputCargo, setHandleInputCargo] = useState();
 
   //Dados do novo Colaborador
   const novoColaborador = {
-    id: "",
+    id: uuid4(),
     nome: handleInputColaborador,
     cargo: handleInputCargo,
   }
 
-  const [teste, setTeste] = useState({});
-  console.log(teste)
-
   function addColaborador(e)
   {
-    e.preventDefault()
-    //Verificar se usuário escolheu uma equipe, caso não, deve ser bloqueado e enviado uma informação.
+    e.preventDefault();
     const dataObj =  staffData.find((element) => element.id === id);
     dataObj.colaboradores.push(novoColaborador);
     
-
+    
     fetch(`http://localhost:3000/equipes/${id}`,{
       method: "PATCH",
       headers: {
@@ -76,11 +72,11 @@ function Form( { staffData } ) {
       },
       body: JSON.stringify(dataObj)
     })
-    .then((response) => console.log(response))
+    .then(
+      location.reload()
+    )
     .catch((e) => console.log(e))
   }
-
-
 
   return (
     <ContainerMax> 
@@ -88,7 +84,6 @@ function Form( { staffData } ) {
         <Button aoClicar={aoFormAddMemberClick} text='Adicionar Colaborador'/>
         <Button aoClicar={aoCreateTimeClick} text='Criar Time'/>
       </ButtonsGroup>
-
 
       <Container>
       {!Time && (<FormCreateEquip>
@@ -107,12 +102,11 @@ function Form( { staffData } ) {
               labelText='Escolha uma Cor:'
             />
           </div>
-            <Button text='Criar Time' aoClicar={submit}/>
+          <Button text='Criar Time' aoClicar={createStaff}/>
         </FormCreateEquip>)
       }
 
-      {Time && (
-        <FormAddMember>
+      {Time && (<FormAddMember>
           <Input 
             type='text' 
             labelText='Nome:' 
@@ -134,12 +128,11 @@ function Form( { staffData } ) {
           />
 
           <Button text='Adicionar Colaborador' aoClicar={addColaborador}/>
-        </FormAddMember>
-        )
+        </FormAddMember>)
       }
       </Container>
     </ContainerMax>
   )
 }
 
-export default Form
+export default Form;
