@@ -1,11 +1,11 @@
 import React from "react";
-import { Container } from "./Config";
+import { Container } from "./OptionConfig.js";
 
-function OptionConfig({Text}){
+function OptionConfig({text, iconName}){
   return (
     <Container>
-      <img src="" alt=""/>
-      <p>{Text}</p>
+      <img src={iconName}/>
+      <p>{text}</p>
     </Container>
   )
 }

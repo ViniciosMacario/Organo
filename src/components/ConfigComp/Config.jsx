@@ -1,28 +1,21 @@
 import React from "react";
-import { Container,Title } from "./Config";
+import { Container,Title, GroupOptions } from "./Config";
+import OptionConfig from "./OptionConfig.jsx";
+import { iconesConfig } from "./IconesConfig.js";
 
 function Config(){
   return (
     <Container>
       <Title>Front-end</Title>
-      <div>
-        <div>
-          <img src="" alt=""/>
-          <p>Editar nome da Equipe</p>
-        </div>
-        <div>
-          <img src="" alt=""/>
-          <p>Alterar cor da Equipe</p>
-        </div>
-        <div>
-          <img src="" alt=""/>
-          <p>Descrição da Equipe</p>
-        </div>
-        <div>
-          <img src="" alt=""/>
-          <p>Remover Colaborador</p>
-        </div>
-      </div>
+      <GroupOptions>
+        <OptionConfig iconName={iconesConfig('editar')} text="Editar nome"/>
+        <OptionConfig iconName={iconesConfig('alterar')} text="Editar cor"/>
+        <OptionConfig iconName={iconesConfig('descricao')} text="Descrição da Equipe"/>
+        <OptionConfig iconName={iconesConfig('remover')} text="Remover Colaborador"/>
+
+
+        <OptionConfig iconName={iconesConfig('excluir')} text="Excluir Equipe"/>
+      </GroupOptions>
     </Container>
   )
 }
