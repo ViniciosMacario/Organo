@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Main, SubTitle } from "./App.js";
-import Config from "./components/Config.jsx";
+import Config from "./components/ConfigComp/Config.jsx";
 import Footer from "./components/Footer.jsx";
 import Form from "./components/Form.jsx";
 import Header from "./components/Header.jsx";
