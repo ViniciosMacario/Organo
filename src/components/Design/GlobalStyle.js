@@ -11,10 +11,10 @@ export const GlobalStyle = createGlobalStyle`
 
 body::-webkit-scrollbar{
   width: 10px;
-  background-color: white;
+  background-color: #0D0000;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: rgba(11, 164, 203, 1);    
+  background-color: #8C8888;    
 }   
 ` 

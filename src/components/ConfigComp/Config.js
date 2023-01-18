@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   height: 100vh;
   width: 100%;
-
+  padding: 10px;
 
   position: absolute;
   z-index: 2;
@@ -12,8 +12,7 @@ export const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-
-  background-color: black;
+  background-color: #0D0000;
 `
 
 export const Title = styled.h2`
@@ -36,12 +35,34 @@ export const GroupOptions = styled.div`
     width: 50%;
   }
 
-  > div:nth-last-child(1){
+  .groupButtons{
+    display: flex;
     margin-top: 80px;
-    padding-left: 0px;
-    justify-content: center;
-    border: none;
-    background-color: #CA0606;
+    gap: 50px;
+
+    > div:nth-child(1){
+      padding-left: 0px;
+      justify-content: center;
+      border: none;
+      background-color: #CA0606;
+
+      :hover{
+        background-color: #0D0000;
+        border-bottom: 3px solid white;
+      }
+    }
+    
+    > div:nth-child(2){
+      padding-left: 0px;
+      justify-content: center;
+      border: none;
+      background-color: blue;
+
+      :hover{
+        background-color: #0D0000;
+        border-bottom: 3px solid white;
+      }
+    }
   }
 
 `

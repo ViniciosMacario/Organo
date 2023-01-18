@@ -9,5 +9,6 @@ export const FooterComp = styled.footer`
   align-items: center;
   gap: 20px;
 
-  background-color: purple;
+  color: white;
+  background-color: #0D0000;
 `

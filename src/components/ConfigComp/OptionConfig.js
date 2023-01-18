@@ -17,10 +17,10 @@ export const Container = styled.div`
   text-align: center;
 
   border-radius: 5px 5px 0px 0px;
-  border-bottom: 3px solid black;
-  background-color: #7C7A7A;
+  border-bottom: 3px solid white;
+  background-color: #8C8888;
 
   :hover{
-    background-color: black;
+    background-color: #0D0000;
   }
 `

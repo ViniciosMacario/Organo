@@ -9,6 +9,18 @@ import Staff from "./components/Staff.jsx";
 
 function App() {
   const [staffData, setStaffData] = useState([]);
+  const [configVisible, setConfigVisible] = useState(false);
+
+  //controle da visibilidade da sessão e configuração.
+  function configExist(){
+    console.log('ok')
+    setConfigVisible(false)
+  }
+  //controle da visibilidade da sessão e configuração.
+  function configOpen(){
+    console.log('ok')
+    setConfigVisible(true)
+  }
 
   useEffect(() => {
     fetch(import.meta.env.VITE_API)
@@ -18,22 +30,27 @@ function App() {
   
   return (
     <>
-      <Header/>
-      <Main>
-        <section>
-          <Form staffData={staffData} />
-        </section>
+      {!configVisible && (
+        <>
+          <Header/>
+          <Main>
+            <section>
+              <Form staffData={staffData} />
+            </section>
 
-        <section>
-          <SubTitle>Minha Organização</SubTitle>
-          {staffData.map(data => {
-            return ( <Staff key={data.id} name={data.nome} colaboradores={data.colaboradores} colorBg={data.color} cargo={data.colaboradores}/> )
-            })
-          }
-        </section>
-      </Main>
-      <Config/>
-      <Footer/>
+            <section>
+              <SubTitle>Minha Organização</SubTitle>
+              {staffData.map(data => {
+                return ( <Staff key={data.id} name={data.nome} colaboradores={data.colaboradores} colorBg={data.color} cargo={data.colaboradores} openConfig={configOpen}/> )
+                })
+              }
+            </section>
+          </Main>
+          <Footer/>
+        </>
+      )
+      }
+      {configVisible && <Config configExist={configExist}/>}
     </>
   )
 }

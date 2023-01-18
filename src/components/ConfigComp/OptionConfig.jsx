@@ -1,9 +1,9 @@
 import React from "react";
 import { Container } from "./OptionConfig.js";
 
-function OptionConfig({text, iconName}){
+function OptionConfig({text, iconName, onClick}){
   return (
-    <Container>
+    <Container onClick={onClick}>
       <img src={iconName}/>
       <p>{text}</p>
     </Container>
