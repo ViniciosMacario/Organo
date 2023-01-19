@@ -35,19 +35,6 @@
       ],
       "descricao": "Equipe responsável pelo Desenvolvimento da Api do Projeto Organo",
       "color": "#00BFFF"
-    },
-    {
-      "id": "9f556a23-c4d7-4c9c-a9ba-561a19577df0",
-      "nome": "Segurança",
-      "colaboradores": [
-        {
-          "id": "c6b47481-aad8-4ca5-8f81-2b11495ed920",
-          "nome": "teste",
-          "cargo": "teste"
-        }
-      ],
-      "descricao": "teste",
-      "color": "#bb259b"
     }
   ]
 }

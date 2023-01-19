@@ -1,6 +1,6 @@
 import React from 'react'
-import { CardComp, UserData, ColorTop } from './Card'
-import Vinicios from '../img/Vini.jpg'
+import { CardComp, UserData, ColorTop } from '../Staff/Card'
+import Vinicios from '../../img/Vini.jpg'
 
 function Card({nome, cargo, color}) {
   return (

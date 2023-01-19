@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { TextColor } from "./Design/Colors";
+import { TextColor } from "../Design/Colors";
 
 export const Container = styled.section`
   padding: 25px;
   color: ${TextColor};
 
-  > div:nth-of-type(1){
+  .header{
     margin-block: 25px 50px;
 
     display: flex;
@@ -14,6 +14,15 @@ export const Container = styled.section`
 
     h2{
       opacity: 0.95;
+    }
+  }
+
+  svg{
+    fill: white;
+    cursor: pointer;
+    :hover{
+      fill: #0D0000;
+      transform: scale(1.2);
     }
   }
 `
@@ -47,6 +56,6 @@ export const Members = styled.div`
 
   ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: rgba(11, 164, 203, 1);    
+    background-color: #8C8888;    
   }  
 `

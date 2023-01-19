@@ -7,12 +7,22 @@ export const Container = styled.div`
 
   position: absolute;
   z-index: 2;
-  top: 0;
+  left: -100%;
+
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   background-color: #0D0000;
+
+  animation: animation 1s linear forwards;
+  
+
+  @keyframes animation {
+    to{
+      left: 0%;
+    }
+  }
 `
 
 export const Title = styled.h2`
@@ -27,6 +37,7 @@ export const GroupOptions = styled.div`
   width: 100%;
 
   display: flex;
+  justify-content: center;
   flex-direction: column;
   gap: 50px;
   /* background-color: aquamarine; */
@@ -37,9 +48,12 @@ export const GroupOptions = styled.div`
 
   .groupButtons{
     display: flex;
-    margin-top: 80px;
     gap: 50px;
 
+    @media(min-width: 1024px){
+      margin-top: 80px;
+    }
+    
     > div:nth-child(1){
       padding-left: 0px;
       justify-content: center;
