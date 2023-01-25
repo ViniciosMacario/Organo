@@ -7,22 +7,12 @@ export const Container = styled.div`
 
   position: absolute;
   z-index: 2;
-  left: -100%;
-
+  left: 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   background-color: #0D0000;
-
-  animation: animation 1s linear forwards;
-  
-
-  @keyframes animation {
-    to{
-      left: 0%;
-    }
-  }
 `
 
 export const Title = styled.h2`

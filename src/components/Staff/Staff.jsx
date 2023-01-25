@@ -4,7 +4,6 @@ import { InputComp } from '../Form/Input'
 import { Container, Members } from '../Staff/Staff.js'
 import hexToRgba from "hex-to-rgba";
 import Config from '../ConfigComp/Config.jsx'
-import { scroll } from '../ConfigComp/Scroll.js';
 
 //Componente responsável por renderizar a Equipe, informando alguns dados referente a mesma como: Cor da Equipe, colaboradores, nome..
 function Staff({responseData}){
@@ -13,15 +12,14 @@ function Staff({responseData}){
   //controle da visibilidade da sessão e configuração.
   function configExist(){
     setConfigVisible(false)
+    window.document.body.style.overflow = "auto";
   }
   //controle da visibilidade da sessão e configuração.
   function configOpen(){
-    scroll()
     setConfigVisible(true)
+    window.document.body.style.overflow = "hidden";
   }
-
   
-
   return (
     <Container style={{background: `${hexToRgba(responseData.color, 0.8)}`}}>
       {configVisible && <Config responseData={responseData} configExist={configExist}/>}

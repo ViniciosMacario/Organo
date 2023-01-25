@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useRef, useLayoutEffect } from "react";
 import { Container,Title, GroupOptions } from "./Config";
 import OptionConfig from "./OptionConfig.jsx";
 import { iconesConfig } from "./IconesConfig.js";
 
 function Config({configExist, responseData}){
-  // window.addEventListener('scroll', () => console.log(window.scrollY))
-  // console.log(innerHeight)
+  const elementRef = useRef();
+
+  //Precisamos usar esse hook para acessar o valor de useRef
+    //Ele executa uma função a cada renderização do componente
+  useLayoutEffect(() => {
+    window.scroll({
+      left: 0,
+      top: elementRef.current.offsetTop - 0.2,
+      behavior: 'smooth'
+    });
+  })
   
 
-  const teste = window.document.getElementsByClassName('teste');
-  console.log(teste)
-
   return (
-    <Container className="teste">
+    <Container ref={elementRef}>
       <Title>{responseData.nome}</Title>
       <GroupOptions>
         <OptionConfig   iconName={iconesConfig('editar')}     text="Editar nome"             onClick={""}           />
