@@ -12,6 +12,5 @@ export const TextAreaComp = styled.textarea`
   ::placeholder{
     color: white;
     font-size: 14px;
-
   }
 `
