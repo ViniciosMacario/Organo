@@ -12,7 +12,6 @@ import Remover from "./Options/Remover.jsx"
 
 function Config({configExist, responseData}){
   const elementRef = useRef();
-
   //Precisamos usar esse hook para acessar o valor de useRef
     //Ele executa uma função a cada renderização do componente
   useLayoutEffect(() => {
@@ -41,32 +40,40 @@ function Config({configExist, responseData}){
     setDescricaoVisible(!descricaoVisible);
   }
 
-  //Descrição
+  //Remover
   const [removerVisible, setRemoverVisible] = useState(false);
   function handleRemover(){
     setRemoverVisible(!removerVisible);
   }
 
+
+  function deletarEquipe(){
+    //Atualizando nome da Equipe
+    fetch(`http://localhost:3000/equipes/${responseData.id}`, {
+      method: "DELETE"
+    })
+    window.location.reload()
+  }
+
   return (
     <Container ref={elementRef}>
-
       <Title>{responseData.nome}</Title>
       <GroupOptions>
-        <OptionConfig   iconName={iconesConfig('editar')}     text="Editar nome"              onClick={handleNome}           />
-        {nomeVisible && <Nome/>}
+        <OptionConfig   iconName={iconesConfig('editar')}     text="Editar nome"              onClick={handleNome}            />
+        {nomeVisible && <Nome responseData={responseData}/>}
 
         <OptionConfig   iconName={iconesConfig('alterar')}    text="Editar cor"               onClick={handleColor}           />
-        {colorVisible && <Color/>}
+        {colorVisible && <Color responseData={responseData}/>}
 
-        <OptionConfig   iconName={iconesConfig('descricao')}  text="Descrição da Equipe"      onClick={handleDescricao} />
-        {descricaoVisible && <Descricao/>}
+        <OptionConfig   iconName={iconesConfig('descricao')}  text="Descrição da Equipe"      onClick={handleDescricao}       />
+        {descricaoVisible && <Descricao responseData={responseData}/>}
 
-        <OptionConfig   iconName={iconesConfig('remover')}    text="Remover Colaborador"      onClick={handleRemover}            />
-        {removerVisible && <Remover/>}
+        <OptionConfig   iconName={iconesConfig('remover')}    text="Remover Colaborador"      onClick={handleRemover}         />
+        {removerVisible && <Remover responseData={responseData}/>}
 
         <div className="groupButtons">
-          <OptionConfig iconName={iconesConfig('excluir')}    text="Excluir Equipe"           onClick={handleColor}             />
-          <OptionConfig iconName={iconesConfig('back')}       text="Voltar"                   onClick={configExist} />
+          <OptionConfig iconName={iconesConfig('excluir')} responseData={responseData}   text="Excluir Equipe"    onClick={deletarEquipe}  />
+          <OptionConfig iconName={iconesConfig('back')}       text="Voltar"                   onClick={configExist}           />
         </div>
       </GroupOptions>
     </Container>

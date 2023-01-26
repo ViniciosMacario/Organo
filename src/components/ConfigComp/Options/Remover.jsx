@@ -12,18 +12,18 @@ function Remover() {
         labelText="Colaborador:"
       />
       <div>
-      <Button text="Vinicios"/>
-      <Button text="Vinicios"/>
-      <Button text="Vinicios"/>
-      <Button text="Vinicios"/>
-      <Button text="Vinicios"/>
-      <Button text="Vinicios"/>
-      <Button text="Vinicios"/>
-      <Button text="Vinicios"/>
-      <Button text="Vinicios"/>
-      <Button text="Vinicios"/>
-      <Button text="Vinicios"/>
-      <Button text="Vinicios"/>
+        <Button text="Vinicios"/>
+        <Button text="Vinicios"/>
+        <Button text="Vinicios"/>
+        <Button text="Vinicios"/>
+        <Button text="Vinicios"/>
+        <Button text="Vinicios"/>
+        <Button text="Vinicios"/>
+        <Button text="Vinicios"/>
+        <Button text="Vinicios"/>
+        <Button text="Vinicios"/>
+        <Button text="Vinicios"/>
+        <Button text="Vinicios"/>
       </div>
       </div>
       <div className='containerButton'>

@@ -2,18 +2,15 @@ import React from 'react'
 import { TextAreaComp } from './TextArea'
 import { Label } from './Input.js'
 
-function TextArea({handleOnChange}) {
+function TextArea({handleOnChange,value}) {
   return (
-    <>
+    <TextAreaComp>
       <Label>Descrição da Equipe:</Label>
-      <TextAreaComp 
-        onChange={handleOnChange}
-        placeholder='Digite aqui!' 
-        name='text'
-        required
-      />
-    </>
+      <textarea  onChange={handleOnChange} placeholder='Digite aqui!' name='text' required>
+        {value}
+    </textarea>
+    </TextAreaComp>
   )
 }
 
-export default TextArea
+export default TextArea;
