@@ -27,4 +27,16 @@ export const Container = styled.div`
       }
     }
   }
+
+  .groupColaboradores{
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    button{
+      background-color: #8C8888;
+      :hover{
+        background-color: #0D0000;
+      }
+    }
+}
 `

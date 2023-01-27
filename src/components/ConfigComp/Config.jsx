@@ -59,21 +59,21 @@ function Config({configExist, responseData}){
     <Container ref={elementRef}>
       <Title>{responseData.nome}</Title>
       <GroupOptions>
-        <OptionConfig   iconName={iconesConfig('editar')}     text="Editar nome"              onClick={handleNome}            />
+        <OptionConfig   iconName={iconesConfig('editar')}     text="Editar nome"              onClick={handleNome}/>
         {nomeVisible && <Nome responseData={responseData}/>}
 
-        <OptionConfig   iconName={iconesConfig('alterar')}    text="Editar cor"               onClick={handleColor}           />
+        <OptionConfig   iconName={iconesConfig('alterar')}    text="Editar cor"               onClick={handleColor}/>
         {colorVisible && <Color responseData={responseData}/>}
 
-        <OptionConfig   iconName={iconesConfig('descricao')}  text="Descrição da Equipe"      onClick={handleDescricao}       />
+        <OptionConfig   iconName={iconesConfig('descricao')}  text="Descrição da Equipe"      onClick={handleDescricao}/>
         {descricaoVisible && <Descricao responseData={responseData}/>}
 
-        <OptionConfig   iconName={iconesConfig('remover')}    text="Remover Colaborador"      onClick={handleRemover}         />
+        <OptionConfig   iconName={iconesConfig('remover')}    text="Remover Colaborador"      onClick={handleRemover}/>
         {removerVisible && <Remover responseData={responseData}/>}
 
         <div className="groupButtons">
           <OptionConfig iconName={iconesConfig('excluir')} responseData={responseData}   text="Excluir Equipe"    onClick={deletarEquipe}  />
-          <OptionConfig iconName={iconesConfig('back')}       text="Voltar"                   onClick={configExist}           />
+          <OptionConfig iconName={iconesConfig('back')}       text="Voltar"                   onClick={configExist}/>
         </div>
       </GroupOptions>
     </Container>

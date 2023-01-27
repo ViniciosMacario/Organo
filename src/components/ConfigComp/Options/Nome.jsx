@@ -7,8 +7,6 @@ import { useState } from "react";
 function Nome({responseData}){
   const [handleInput, setHandleInput] = useState();
 
-  console.log(responseData)
-
   async function AlterarNome(){
     const data = {
       id: responseData.id,

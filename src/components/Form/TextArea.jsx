@@ -8,7 +8,7 @@ function TextArea({handleOnChange,value}) {
       <Label>Descrição da Equipe:</Label>
       <textarea  onChange={handleOnChange} placeholder='Digite aqui!' name='text' required>
         {value}
-    </textarea>
+      </textarea>
     </TextAreaComp>
   )
 }

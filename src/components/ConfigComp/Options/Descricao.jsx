@@ -28,6 +28,7 @@ function Descricao ({responseData}){
     <Container>
       <div className="containerInput">
         <TextArea 
+          defaultValue=""
           value={responseData.descricao}
           handleOnChange={e => setHandleDescricao(e.target.value)}
         />
