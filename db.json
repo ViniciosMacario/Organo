@@ -1,19 +1,6 @@
 {
   "equipes": [
     {
-      "id": "1",
-      "nome": "Front-end",
-      "colaboradores": [
-        {
-          "id": "c1fbf717-dc18-4b10-80c9-4f45ba2c28be",
-          "nome": "Vinicios",
-          "cargo": "Líder do Projeto"
-        }
-      ],
-      "descricao": "Equipe responsável pelo Desenvolvimento da UI web do Projeto Organo ",
-      "color": "#0adb23"
-    },
-    {
       "id": "2",
       "nome": "Back-end",
       "colaboradores": [
@@ -30,6 +17,19 @@
       ],
       "descricao": "Equipe responsável pelo Desenvolvimento da Api do Projeto Organo",
       "color": "#00BFFF"
+    },
+    {
+      "id": "b8668298-3a0a-4181-a891-9a5ccb5fb3ba",
+      "nome": "Front-end",
+      "colaboradores": [
+        {
+          "id": "07cf947c-18a2-40d3-a078-e27faf48ab19",
+          "nome": "Paulo",
+          "cargo": "Gerente"
+        }
+      ],
+      "descricao": "Equipe responsável pelo desenvolvimento da Interface do usuário.",
+      "color": "#156534"
     }
   ]
 }

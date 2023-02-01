@@ -16,6 +16,22 @@ export const ButtonsGroup = styled.div`
   gap: 5px;
 
   /* background-color: beige; */
+  
+/* 
+  ${props => props.clickForm ? 
+    `
+      button{
+        color: red;
+      }
+    `
+    :
+    `
+    button{
+        color: blue;
+      }
+    `  
+  }} */
+
 
   button{
     border-radius: 10px 10px 0px 0px;

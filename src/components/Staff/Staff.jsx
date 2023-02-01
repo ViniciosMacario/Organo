@@ -13,7 +13,10 @@ function Staff({responseData}){
   function configExist(){
     setConfigVisible(false)
     window.document.body.style.overflow = "auto";
+    window.location.reload();
   }
+
+
   //controle da visibilidade da sessão e configuração.
   function configOpen(){
     setConfigVisible(true)

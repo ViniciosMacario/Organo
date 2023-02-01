@@ -14,7 +14,7 @@ function Form( { staffData } ) {
   // Salvando os valores digitados nos inputs do formulário da nova equipe.
   const [handleInput, setHandleInput] = useState();
   const [handleTextAreaState, sethandleTextAreaState] = useState();
-  const [handleColor, setHandleColor] = useState();
+  const [handleColor, setHandleColor] = useState('#331010');
 
   //Dados da nova Equipe
   const staff = {
@@ -78,11 +78,19 @@ function Form( { staffData } ) {
     .catch((e) => console.log(e))
   }
 
+
+
+
+
+  //Criar time
+  const [handleButton, setHandleButton] = useState(true);
+
+
   return (
     <ContainerMax> 
-      <ButtonsGroup>
-        <Button aoClicar={aoFormAddMemberClick} text='Adicionar Colaborador'/>
-        <Button aoClicar={aoCreateTimeClick} text='Criar Time'/>
+      <ButtonsGroup clickForm={handleButton}>
+        <Button  aoClicar={aoFormAddMemberClick} text='Adicionar Colaborador'/>
+        <Button  aoClicar={aoCreateTimeClick} text='Criar Time'/>
       </ButtonsGroup>
 
       <Container>
