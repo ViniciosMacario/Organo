@@ -79,16 +79,9 @@ function Form( { staffData } ) {
   }
 
 
-
-
-
-  //Criar time
-  const [handleButton, setHandleButton] = useState(true);
-
-
   return (
     <ContainerMax> 
-      <ButtonsGroup clickForm={handleButton}>
+      <ButtonsGroup clickForm={Time}>
         <Button  aoClicar={aoFormAddMemberClick} text='Adicionar Colaborador'/>
         <Button  aoClicar={aoCreateTimeClick} text='Criar Time'/>
       </ButtonsGroup>

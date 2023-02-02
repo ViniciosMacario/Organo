@@ -17,20 +17,20 @@ export const ButtonsGroup = styled.div`
 
   /* background-color: beige; */
   
-/* 
-  ${props => props.clickForm ? 
+
+  ${props => !props.clickForm ? 
     `
-      button{
-        color: red;
+    button:nth-child(2){
+        background: #8C8888;
       }
     `
     :
     `
-    button{
-        color: blue;
+    button:nth-child(1){
+        background: #8C8888;
       }
     `  
-  }} */
+  }
 
 
   button{
