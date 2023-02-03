@@ -18,7 +18,7 @@ export const ColorTop = styled.div`
   width: 100%;
   height: 45px;
   background-color: ${props => props.color};
-  filter: contrast(10);
+  filter: contrast(3);
 `
 
 export const UserData = styled.div`

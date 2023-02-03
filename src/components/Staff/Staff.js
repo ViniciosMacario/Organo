@@ -2,7 +2,11 @@ import styled from "styled-components";
 import { TextColor } from "../Design/Colors";
 
 export const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  min-height: 500px;
   padding: 25px;
+  
   color: ${TextColor};
 
   .header{
@@ -10,7 +14,7 @@ export const Container = styled.section`
 
     display: flex;
     justify-content: space-between;
-    /* background-color: beige; */
+    /* background-color: black; */
 
     h2{
       opacity: 0.95;
@@ -29,14 +33,14 @@ export const Container = styled.section`
 
 export const Icon = styled.img`
   cursor: pointer;
+  
 `
 
 
 export const Members = styled.div`
-  padding-bottom: 25px;
-
+  justify-self: center;
+  padding: 15px;
   display: flex;
-
   gap: 30px;
 
   overflow-x: auto;
@@ -44,7 +48,26 @@ export const Members = styled.div`
   scroll-snap-type: x mandatory;
   /* background-color: black; */
 
+  ${(props) => props.statusColaborador ?
+    `
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      p{
+        text-align: center;
+        margin-top: 100px;
+        font-Weight: bold;
+        letter-spacing: 1px;
+      }
+
+    `:
+    `
+    display: flex;
+    `
+  }
+
   @media (min-width: 1440px){
+    align-items: center;
     justify-content: center;
   }
 
