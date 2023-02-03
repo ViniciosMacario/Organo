@@ -1,7 +1,8 @@
-(A) - Adicionar mudança de cor quando um formulário for renderizado.
+(X) - Adicionar mudança de cor quando um formulário for renderizado.
 (B) - Adicionar Icon de Reload.
 (C) - Tratar informações vázias.
-(D) - Refatorar o código.
+(D) - Criar sistema de notificação de usuário.
+(E) - Refatorar o código.
 
 
 Erros
