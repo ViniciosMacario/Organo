@@ -10,6 +10,18 @@ function App() {
   const [staffData, setStaffData] = useState([]);
   const [IconReload, setIconReload] = useState(true);
 
+  //Controle da renderização dos formulários baseado no Click
+  const [Time, SetTime] = useState(false);
+
+  //Funções responsavel por deixar visivel e invisivel os Formulário baseado no Click.
+  function aoFormAddMemberClick()
+  {
+    SetTime(true)
+  }
+  function aoCreateTimeClick()
+  {
+    SetTime(false)
+  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,7 +39,12 @@ function App() {
       <Header/>
       <Main>
         <section>
-          <Form staffData={staffData} />
+          <Form 
+            aoFormAddMemberClick={aoFormAddMemberClick}
+            aoCreateTimeClick={aoCreateTimeClick}
+            Time={Time}
+            staffData={staffData} 
+          />
         </section>
 
         <section>
@@ -50,7 +67,7 @@ function App() {
             ? 
               <p style={{color: "white", textAlign: "center", fontSize: "18px"}}>Não há time cadastrado!</p> 
             :
-              staffData.map(data => {return (<Staff responseData={data} key={data.id}/>)})
+              staffData.map(data => {return (<Staff handleStateTimeForm={SetTime}  responseData={data} key={data.id}/>)})
           }
           
         </section>

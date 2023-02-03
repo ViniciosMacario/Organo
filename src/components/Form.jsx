@@ -6,9 +6,8 @@ import { FormCreateEquip, FormAddMember, ButtonsGroup, Container, ContainerMax }
 import Select from './Form/Select.jsx'
 import {v4 as uuid4} from 'uuid'
 
-function Form( { staffData } ) {
-  //Controle da renderização dos formulários baseado no Click
-  const [Time, SetTime] = useState(false);
+function Form( { staffData, aoFormAddMemberClick, aoCreateTimeClick,Time } ) {
+
 
 
   // Salvando os valores digitados nos inputs do formulário da nova equipe.
@@ -38,15 +37,6 @@ function Form( { staffData } ) {
     }
   }
 
-  //Funções responsavel por deixar visivel e invisivel os Formulário baseado no Click.
-  function aoFormAddMemberClick()
-  {
-    SetTime(true)
-  }
-  function aoCreateTimeClick()
-  {
-    SetTime(false)
-  }
 
   // Salvando os valores digitados nos inputs do formulário do novo usuário.
   const [id, setId] = useState();

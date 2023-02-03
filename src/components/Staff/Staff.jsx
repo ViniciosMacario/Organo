@@ -7,7 +7,7 @@ import Config from '../ConfigComp/Config.jsx'
 import Button from "../Form/Button.jsx"
 
 //Componente responsável por renderizar a Equipe, informando alguns dados referente a mesma como: Cor da Equipe, colaboradores, nome..
-function Staff({responseData}){
+function Staff({responseData, handleStateTimeForm}){
   const [configVisible, setConfigVisible] = useState(false);
 
   //controle da visibilidade da sessão e configuração.
@@ -24,8 +24,9 @@ function Staff({responseData}){
     window.document.body.style.overflow = "hidden";
   }
   
-  function backToTop(){
-    window.scroll(0, 100)
+  function backToTopForm(){
+    handleStateTimeForm(true);
+    window.scroll(0, 100);
   }
 
 
@@ -49,7 +50,7 @@ function Staff({responseData}){
             (
               <>
                 <p>Não há colaborador nesta equipe!</p>
-                <Button text="Adicionar um colaborador" aoClicar={backToTop}/>
+                <Button text="Adicionar um colaborador" aoClicar={backToTopForm}/>
               </>
             ) 
           : 
