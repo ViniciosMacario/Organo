@@ -1,7 +1,9 @@
 (X) - Adicionar mudança de cor quando um formulário for renderizado.
 (X) - Quando criado um time, deve ser feito o realod da página automáticamente.
 (X) - Adicionar Icon de Reload.
+(X) - Definir um height minima para todas as "Sections"
+(X) - Criar botão para voltar ao topo quando não tiver colaborador na staff, direcionando para o form correto.
 (X) - Tratar informações vázias.
-(E) - Definir um height minima para todas as "Sections"
-(F) - Criar sistema de notificação de usuário.
-(G) - Refatorar o código.
+(0) - Criar sistema de notificação de usuário.
+(0) - Resolver problemas de responsividade.
+(0) - Refatorar o código.

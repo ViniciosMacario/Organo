@@ -22,23 +22,22 @@ function Remover({responseData}) {
       body: JSON.stringify(data)
     })
   }
+  
 
   return (
     <Container>
       <div className='containerInput'>
-      {/* <Input 
-        handleInput={e => setHandleInput(e.target.value)}
-        type="search" 
-        placeholder="Encontrar Colaborador"
-        labelText="Colaborador:"
-      /> */}
-      <div className='groupColaboradores'>
-        {responseData.colaboradores.map((colaborador) => <Button key={colaborador.id} text={colaborador.nome} aoClicar={e => setItemSelecionado(colaborador.id)}/>)}
-
-      </div>
+        <div className='groupColaboradores'>
+          {responseData.colaboradores.length === 0 
+            ? 
+              <p style={{margin: "0 auto"}}>Não há colaborador nesta equipe </p>
+            : 
+              responseData.colaboradores.map((colaborador) => <Button key={colaborador.id} text={colaborador.nome} aoClicar={e => setItemSelecionado(colaborador.id)}/>)
+          }
+        </div>
       </div>
       <div className='containerButton'>
-        <Button text="Remover" aoClicar={RemoverColaborador}/>
+        {responseData.colaboradores.length > 0 && <Button text="Remover" aoClicar={RemoverColaborador}/>}
       </div>
     </Container>
   )
