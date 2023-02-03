@@ -39,7 +39,7 @@ function Staff({responseData}){
       </div>
 
       <Members>
-        {responseData.colaboradores.map(data => {
+        {responseData.colaboradores.length === 0 ? "Não há colaborador nesta equipe!" : responseData.colaboradores.map(data => {
             return (<Card key={data.id} nome={data.nome} cargo={data.cargo} color={responseData.color}/>)
           })
         }        
