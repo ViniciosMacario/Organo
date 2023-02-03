@@ -16,8 +16,9 @@ function App() {
       fetch(import.meta.env.VITE_API)
       .then(response => response.json())
       .then(data => setStaffData(data))
-      setIconReload(false)
-    }, 1500)
+
+      setIconReload(false);
+    }, 1800)
   }, [])
 
 
@@ -47,9 +48,9 @@ function App() {
 
           {!IconReload && staffData.length === 0 
             ? 
-            <p style={{color: "white", textAlign: "center", fontSize: "18px"}}>Não há time cadastrado!</p> 
+              <p style={{color: "white", textAlign: "center", fontSize: "18px"}}>Não há time cadastrado!</p> 
             :
-            staffData.map(data => {return (<Staff responseData={data} key={data.id}/>)})
+              staffData.map(data => {return (<Staff responseData={data} key={data.id}/>)})
           }
           
         </section>

@@ -27,13 +27,15 @@ function Form( { staffData } ) {
 
   function createStaff()
   {
-    fetch("http://localhost:3000/equipes", {
+    if(handleInput && handleTextAreaState){
+      fetch("http://localhost:3000/equipes",{
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(staff)
     })
+    }
   }
 
   //Funções responsavel por deixar visivel e invisivel os Formulário baseado no Click.
