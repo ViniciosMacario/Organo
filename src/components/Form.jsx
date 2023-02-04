@@ -5,14 +5,17 @@ import TextArea from './Form/TextArea.jsx'
 import { FormCreateEquip, FormAddMember, ButtonsGroup, Container, ContainerMax } from './Form.js'
 import Select from './Form/Select.jsx'
 import {v4 as uuid4} from 'uuid'
+import CardNotification from './Notificação/CardNotification.jsx'
 
 function Form( { staffData, aoFormAddMemberClick, aoCreateTimeClick,Time } ) {
-
+  const [cardNotification, setCardNotification] = useState(false);
+  const [cardNotificationText, setCardNotificationText] = useState();
+  const [handleCardNotification, setHandleCardNotification] = useState(true);
 
 
   // Salvando os valores digitados nos inputs do formulário da nova equipe.
-  const [handleInput, setHandleInput] = useState();
-  const [handleTextAreaState, sethandleTextAreaState] = useState();
+  const [handleInput, setHandleInput] = useState(String);
+  const [handleTextAreaState, sethandleTextAreaState] = useState(String);
   const [handleColor, setHandleColor] = useState('#331010');
 
   //Dados da nova Equipe
@@ -24,16 +27,30 @@ function Form( { staffData, aoFormAddMemberClick, aoCreateTimeClick,Time } ) {
     color: handleColor,
   }
 
-  function createStaff()
+  function createStaff(e)
   {
+    e.preventDefault();
     if(handleInput && handleTextAreaState){
       fetch("http://localhost:3000/equipes",{
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(staff)
-    })
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(staff)});
+      setCardNotificationText(`A equipe ${handleInput.toUpperCase()} foi criada com Sucesso!`)
+      
+      //Estamos renderizando o componente.
+      setCardNotification(true);
+      
+      //Depois de 3s estamos fechando a notificação.
+      setTimeout(() =>{
+        setHandleCardNotification(false);
+      }, 3000);
+
+      //Depois de 5s estamos desfazendo o componente.
+      setTimeout(() =>{
+        setCardNotification(false);
+      }, 5000);
     }
   }
 
@@ -78,6 +95,8 @@ function Form( { staffData, aoFormAddMemberClick, aoCreateTimeClick,Time } ) {
         <Button  aoClicar={aoCreateTimeClick} text='Criar Time'/>
       </ButtonsGroup>
 
+      {cardNotification && <CardNotification handleCardNotification={handleCardNotification} status={'sucess'} text={cardNotificationText}/>}
+
       <Container>
       {!Time && (<FormCreateEquip>
           <div>
@@ -95,7 +114,7 @@ function Form( { staffData, aoFormAddMemberClick, aoCreateTimeClick,Time } ) {
               labelText='Escolha uma Cor:'
             />
           </div>
-          <Button text='Criar Time' aoClicar={createStaff}/>
+          <Button text='Criar Time' aoClicar={(e) => createStaff(e)}/>
         </FormCreateEquip>)
       }
 
@@ -104,20 +123,20 @@ function Form( { staffData, aoFormAddMemberClick, aoCreateTimeClick,Time } ) {
             type='text' 
             labelText='Nome:' 
             placeholder='Digite o nome'
-            handleInput={e => setHandleInputColaborador(e.target.value)}
+            handleInput={(e) => setHandleInputColaborador(e.target.value)}
             required
           />
           <Input 
             type='text' 
             labelText='Cargo:'
-            handleInput={e => setHandleInputCargo(e.target.value)} 
+            handleInput={(e) => setHandleInputCargo(e.target.value)} 
             placeholder='Digite o Cargo'
             required
           />
           <Select
             labelText='Selecione uma Equipe:'
             options={staffData}
-            handleSelect={e => setId(e.target.value)}
+            handleSelect={(e) => setId(e.target.value)}
           />
 
           <Button text='Adicionar Colaborador' aoClicar={addColaborador}/>

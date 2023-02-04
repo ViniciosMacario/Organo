@@ -16,7 +16,6 @@ function Staff({responseData, handleStateTimeForm}){
     window.document.body.style.overflow = "auto";
     window.location.reload();
   }
-  console.log(responseData.colaboradores.length === 0)
 
   //controle da visibilidade da sessão e configuração.
   function configOpen(){
