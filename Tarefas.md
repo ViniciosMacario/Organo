@@ -4,6 +4,6 @@
 (X) - Definir um height minima para todas as "Sections"
 (X) - Criar botão para voltar ao topo quando não tiver colaborador na staff, direcionando para o form correto.
 (X) - Tratar informações vázias.
-(0) - Criar sistema de notificação de usuário.
+(X) - Criar sistema de notificação de usuário.
 (0) - Resolver problemas de responsividade.
 (0) - Refatorar o código.

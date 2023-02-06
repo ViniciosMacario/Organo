@@ -8,10 +8,12 @@ import {v4 as uuid4} from 'uuid'
 import CardNotification from './Notificação/CardNotification.jsx'
 
 function Form( { staffData, aoFormAddMemberClick, aoCreateTimeClick,Time } ) {
+
+  //Informações pertinentes ao sistema de notificação 
   const [cardNotification, setCardNotification] = useState(false);
   const [cardNotificationText, setCardNotificationText] = useState();
   const [handleCardNotification, setHandleCardNotification] = useState(true);
-
+  const [handleStatus, setHandleStatus] = useState();
 
   // Salvando os valores digitados nos inputs do formulário da nova equipe.
   const [handleInput, setHandleInput] = useState(String);
@@ -31,26 +33,47 @@ function Form( { staffData, aoFormAddMemberClick, aoCreateTimeClick,Time } ) {
   {
     e.preventDefault();
     if(handleInput && handleTextAreaState){
-      fetch("http://localhost:3000/equipes",{
+      try{
+        fetch("http://localhost:3000/equipes",{
         method: 'POST',
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(staff)});
-      setCardNotificationText(`A equipe ${handleInput.toUpperCase()} foi criada com Sucesso!`)
-      
-      //Estamos renderizando o componente.
-      setCardNotification(true);
-      
-      //Depois de 3s estamos fechando a notificação.
-      setTimeout(() =>{
-        setHandleCardNotification(false);
-      }, 3000);
+        body: JSON.stringify(staff)})
+        
+        setHandleStatus("sucess")
 
-      //Depois de 5s estamos desfazendo o componente.
-      setTimeout(() =>{
-        setCardNotification(false);
-      }, 5000);
+        setCardNotificationText(`A equipe ${handleInput.toUpperCase()} foi criada com Sucesso!`)
+        
+        // renderizando o componente.
+        setCardNotification(true);
+      
+        //Depois de 3s estamos fechando a notificação.
+        setTimeout(() =>{
+          setHandleCardNotification(false);
+        }, 3000);
+
+        //Depois de 5s estamos desfazendo o componente.
+        setTimeout(() =>{
+          setCardNotification(false);
+        }, 5000);
+      }catch(e){
+        setHandleStatus("erro")
+        setCardNotificationText(`Ocorreu um erro na criação do Time ${handleInput.toUpperCase()}: ${e}`)
+      
+        // renderizando o componente.
+        setCardNotification(true);
+      
+        //Depois de 5s estamos fechando a notificação.
+        setTimeout(() =>{
+          setHandleCardNotification(false);
+        }, 5000);
+
+        //Depois de 5s estamos desfazendo o componente.
+        setTimeout(() =>{
+          setCardNotification(false);
+        }, 7000);
+      }
     }
   }
 
@@ -69,22 +92,53 @@ function Form( { staffData, aoFormAddMemberClick, aoCreateTimeClick,Time } ) {
 
   function addColaborador(e)
   {
-    e.preventDefault();
-    const dataObj =  staffData.find((element) => element.id === id);
-    dataObj.colaboradores.push(novoColaborador);
+    try{
+      e.preventDefault();
+      const dataObj =  staffData.find((element) => element.id === id);
+      dataObj.colaboradores.push(novoColaborador);
     
+      fetch(`http://localhost:3000/equipes/${id}`,{
+        method: "PATCH",
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify(dataObj)
+      })
+
+      setHandleStatus("sucess");
+      setCardNotificationText(`O Colaborador ${handleInputColaborador.toUpperCase()} foi Adicionado com Sucesso!`);
+      
+      // renderizando o componente.
+      setCardNotification(true);
     
-    fetch(`http://localhost:3000/equipes/${id}`,{
-      method: "PATCH",
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify(dataObj)
-    })
-    .then(
-      location.reload()
-    )
-    .catch((e) => console.log(e))
+      //Depois de 3s estamos fechando a notificação.
+      setTimeout(() =>{
+        setHandleCardNotification(false);
+      }, 3000);
+
+      //Depois de 5s estamos desfazendo o componente.
+      setTimeout(() =>{
+        setCardNotification(false);
+        location.reload()
+      }, 5000);
+
+    }catch(e){
+      setHandleStatus("erro")
+      setCardNotificationText(`Ocorreu um erro na criação do Time ${handleInput.toUpperCase()}: ${e}`)
+    
+      // renderizando o componente.
+      setCardNotification(true);
+    
+      //Depois de 5s estamos fechando a notificação.
+      setTimeout(() =>{
+        setHandleCardNotification(false);
+      }, 5000);
+
+      //Depois de 5s estamos desfazendo o componente.
+      setTimeout(() =>{
+        setCardNotification(false);
+      }, 7000);
+    }
   }
 
 
@@ -95,7 +149,7 @@ function Form( { staffData, aoFormAddMemberClick, aoCreateTimeClick,Time } ) {
         <Button  aoClicar={aoCreateTimeClick} text='Criar Time'/>
       </ButtonsGroup>
 
-      {cardNotification && <CardNotification handleCardNotification={handleCardNotification} status={'sucess'} text={cardNotificationText}/>}
+      {cardNotification && <CardNotification handleCardNotification={handleCardNotification} status={handleStatus} text={cardNotificationText}/>}
 
       <Container>
       {!Time && (<FormCreateEquip>

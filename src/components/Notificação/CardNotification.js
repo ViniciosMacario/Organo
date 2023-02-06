@@ -13,7 +13,6 @@ export const Container = styled.div`
   align-items: center;
   gap: 20px;
 
-
   ${(props) => props.handleCardNotification ? `animation: Card-visible 1s both;` : `animation: Card-invisible 1s ;`}
   
   color: white;
