@@ -8,43 +8,10 @@
           "id": "24a82f86-b9b7-4563-99fc-fe8be7083c27",
           "nome": "Vinicios",
           "cargo": "Líder do Projeto"
-        },
-        {
-          "id": "7ea9d4c1-ac4c-4fb0-bad6-fe598473d155",
-          "nome": "teste",
-          "cargo": "teste"
-        },
-        {
-          "id": "67cfefa4-76e4-4444-bcbb-816770eb7a79",
-          "nome": "teste2",
-          "cargo": "teste2"
-        },
-        {
-          "id": "541fe616-3ce3-4ee7-848f-478ed6794abf",
-          "nome": "teste3",
-          "cargo": "teste3"
-        },
-        {
-          "id": "89a8dd2a-fcf4-4bbb-b30a-d7a7961eab52",
-          "nome": "teste",
-          "cargo": "teste"
         }
       ],
       "descricao": "Equipe responsável pelo Desenvolvimento da Api do Projeto Organo",
       "color": "#931010"
-    },
-    {
-      "id": "b8668298-3a0a-4181-a891-9a5ccb5fb3ba",
-      "nome": "Front-end",
-      "colaboradores": [
-        {
-          "id": "07cf947c-18a2-40d3-a078-e27faf48ab19",
-          "nome": "Paulo",
-          "cargo": "Gerente"
-        }
-      ],
-      "descricao": "Equipe responsável pelo desenvolvimento da Interface do usuário.a",
-      "color": "#156534"
     },
     {
       "id": "f3eb0c51-c96a-415c-91c5-a55e801b1d0f",
@@ -52,6 +19,19 @@
       "colaboradores": [],
       "descricao": "teste",
       "color": "#331010"
+    },
+    {
+      "id": "b3a87493-f950-427c-9e21-9e7e6c459173",
+      "nome": "Front-end",
+      "colaboradores": [
+        {
+          "id": "3ed893fc-649b-4e51-b674-4861228a2171",
+          "nome": "teste",
+          "cargo": "teste"
+        }
+      ],
+      "descricao": "Front-end",
+      "color": "#0fd779"
     }
   ]
 }
