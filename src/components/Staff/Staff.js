@@ -42,7 +42,8 @@ export const Members = styled.div`
   padding: 15px;
   display: flex;
   gap: 30px;
-
+    align-items: center;
+    justify-content: center;
   overflow-x: auto;
   scroll-padding: 25px;
   scroll-snap-type: x mandatory;
@@ -55,7 +56,7 @@ export const Members = styled.div`
       gap: 25px;
       p{
         text-align: center;
-        margin-top: 100px;
+        margin-top: 50px;
         font-Weight: bold;
         letter-spacing: 1px;
       }
@@ -64,11 +65,6 @@ export const Members = styled.div`
     `
     display: flex;
     `
-  }
-
-  @media (min-width: 1440px){
-    align-items: center;
-    justify-content: center;
   }
 
   ::-webkit-scrollbar{

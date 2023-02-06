@@ -42,8 +42,11 @@ export const GroupOptions = styled.div`
 
     @media(min-width: 1024px){
       margin-top: 80px;
+      
     }
-    
+    @media(min-width: 300px){
+      gap: 15px;
+    }
     > div:nth-child(1){
       padding-left: 0px;
       justify-content: center;

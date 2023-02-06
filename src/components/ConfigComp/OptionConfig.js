@@ -4,7 +4,9 @@ export const Container = styled.div`
   height: 80px;
   width: 100%;
   padding-left: 50px;
+  white-space: nowrap;
 
+  
   display: flex;
   align-items: center;//x
   justify-content: flex-start;//y
@@ -15,7 +17,7 @@ export const Container = styled.div`
   color: white;
   cursor: pointer;
   text-align: center;
-
+  
   border-radius: 5px 5px 0px 0px;
   border-bottom: 3px solid white;
   background-color: #8C8888;
@@ -23,4 +25,5 @@ export const Container = styled.div`
   :hover{
     background-color: #0D0000;
   }
+
 `
