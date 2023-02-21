@@ -3,6 +3,8 @@ import Card from './Card.jsx'
 import { InputComp } from '../Form/Input'
 import { Container, Members } from '../Staff/Staff.js'
 import hexToRgba from "hex-to-rgba";
+
+
 import Config from '../ConfigComp/Config.jsx'
 import Button from "../Form/Button.jsx"
 
@@ -14,7 +16,7 @@ function Staff({responseData, handleStateTimeForm}){
   function configExist(){
     setConfigVisible(false)
     window.document.body.style.overflow = "auto";
-    window.location.reload();
+    // window.location.reload();
   }
 
   //controle da visibilidade da sessão e configuração.
@@ -31,6 +33,7 @@ function Staff({responseData, handleStateTimeForm}){
 
   return (
     <Container style={{background: `${hexToRgba(responseData.color, 0.8)}`}}>
+      {/* Menu de configuração da equipe */}
       {configVisible && <Config responseData={responseData} configExist={configExist}/>}
 
       <div className='header'>

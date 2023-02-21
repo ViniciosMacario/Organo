@@ -17,7 +17,7 @@ function Remover({responseData}) {
     colaboradores:  responseData.colaboradores.filter((colaborador) => colaborador.id !== itemSelecionado),
   }
 
-  function RemoverColaborador(){
+  function removeCollaborator(){
     try{
       //Atualizando nome da Equipe
       fetch(`http://localhost:3000/equipes/${responseData.id}`, {
@@ -77,7 +77,7 @@ function Remover({responseData}) {
         </div>
       </div>
       <div className='containerButton'>
-        {responseData.colaboradores.length > 0 && <Button text="Remover" aoClicar={RemoverColaborador}/>}
+        {responseData.colaboradores.length > 0 && <Button text="Remover" aoClicar={removeCollaborator}/>}
       </div>
     </Container>
   )

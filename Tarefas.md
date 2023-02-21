@@ -7,3 +7,8 @@
 (X) - Criar sistema de notificação de usuário.
 (0) - Resolver problemas de responsividade.
 (0) - Refatorar o código.
+
+
+(A) - Sistema de notificação = Está quebrando o príncipio solid.
+(B) - Config funções que não estão no "try catch"
+(C) -  

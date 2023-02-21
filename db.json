@@ -16,20 +16,20 @@
     {
       "id": "f3eb0c51-c96a-415c-91c5-a55e801b1d0f",
       "nome": "Segurança da Informação",
-      "colaboradores": [],
+      "colaboradores": [
+        {
+          "id": "24a82f86-b9b7-4563-99fc-fe8be7083c27",
+          "nome": "Vinicios",
+          "cargo": "Líder do Projeto"
+        }
+      ],
       "descricao": "teste",
-      "color": "#331010"
+      "color": "#069364"
     },
     {
       "id": "b3a87493-f950-427c-9e21-9e7e6c459173",
       "nome": "Front-end",
-      "colaboradores": [
-        {
-          "id": "3ed893fc-649b-4e51-b674-4861228a2171",
-          "nome": "teste",
-          "cargo": "teste"
-        }
-      ],
+      "colaboradores": [],
       "descricao": "Front-end",
       "color": "#0fd779"
     }
