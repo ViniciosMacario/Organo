@@ -1,37 +1,3 @@
 {
-  "equipes": [
-    {
-      "id": "2",
-      "nome": "Back-end",
-      "colaboradores": [
-        {
-          "id": "24a82f86-b9b7-4563-99fc-fe8be7083c27",
-          "nome": "Vinicios",
-          "cargo": "Líder do Projeto"
-        }
-      ],
-      "descricao": "Equipe responsável pelo Desenvolvimento da Api do Projeto Organo",
-      "color": "#931010"
-    },
-    {
-      "id": "f3eb0c51-c96a-415c-91c5-a55e801b1d0f",
-      "nome": "Segurança da Informação",
-      "colaboradores": [
-        {
-          "id": "24a82f86-b9b7-4563-99fc-fe8be7083c27",
-          "nome": "Vinicios",
-          "cargo": "Líder do Projeto"
-        }
-      ],
-      "descricao": "teste",
-      "color": "#069364"
-    },
-    {
-      "id": "b3a87493-f950-427c-9e21-9e7e6c459173",
-      "nome": "Front-end",
-      "colaboradores": [],
-      "descricao": "Front-end",
-      "color": "#0fd779"
-    }
-  ]
+  "equipes": []
 }

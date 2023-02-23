@@ -5,7 +5,7 @@ export const Container = styled.div`
   min-width: 450px;
   max-width: 450px;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   bottom: 30px;
   left: -450px;
   padding: 15px;

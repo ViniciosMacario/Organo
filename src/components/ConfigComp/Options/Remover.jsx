@@ -1,17 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../../Form/Button.jsx';
 import { Container } from './Remover.js';
-import { useState } from 'react';
-import CardNotification from "../../Notificação/CardNotification.jsx"
 
-function Remover({responseData}) {
-  // const [handleInput, setHandleInput] = useState();
+function Remover({responseData, cardNotification,cardNotificationText,handleCardNotification,handleStatus}) {
   const [itemSelecionado, setItemSelecionado] = useState();
-
-  const [cardNotification, setCardNotification] = useState(false);
-  const [handleCardNotification, setHandleCardNotification] = useState(true);
-  const [handleStatus, setHandleStatus] = useState();
-  const [cardNotificationText, setCardNotificationText] = useState();
 
   const data = {
     colaboradores:  responseData.colaboradores.filter((colaborador) => colaborador.id !== itemSelecionado),
@@ -27,36 +19,36 @@ function Remover({responseData}) {
         },
         body: JSON.stringify(data)
       })
-      setHandleStatus("sucess")
-      setCardNotificationText(`Colaborador removido com Sucesso!`)
+      handleStatus("sucess")
+      cardNotificationText(`Colaborador removido com Sucesso!`)
       
       // renderizando o componente.
-      setCardNotification(true);
+      cardNotification(true);
     
       //Depois de 3s estamos fechando a notificação.
       setTimeout(() =>{
-        setHandleCardNotification(false);
+        handleCardNotification(false);
       }, 3000);
 
       //Depois de 5s estamos desfazendo o componente.
       setTimeout(() =>{
-        setCardNotification(false);
+        cardNotification(false);
       }, 5000);
     }catch(e){
-      setHandleStatus("erro")
-      setCardNotificationText(`Ocorreu um erro na remoção do colaborador}: ${e}`)
+      handleStatus("erro")
+      cardNotificationText(`Ocorreu um erro na remoção do colaborador}: ${e}`)
     
       // renderizando o componente.
-      setCardNotification(true);
+      cardNotification(true);
     
       //Depois de 5s estamos fechando a notificação.
       setTimeout(() =>{
-        setHandleCardNotification(false);
+        handleCardNotification(false);
       }, 5000);
 
       //Depois de 5s estamos desfazendo o componente.
       setTimeout(() =>{
-        setCardNotification(false);
+        cardNotification(false);
       }, 7000);
     }
   }
@@ -64,8 +56,6 @@ function Remover({responseData}) {
 
   return (
     <Container>
-      {cardNotification && <CardNotification status={handleStatus} text={cardNotificationText} handleCardNotification={handleCardNotification}/>}
-
       <div className='containerInput'>
         <div className='groupColaboradores'>
           {responseData.colaboradores.length === 0 

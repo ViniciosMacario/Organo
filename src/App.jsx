@@ -5,9 +5,27 @@ import Form from "./components/Form.jsx";
 import Header from "./components/Header.jsx";
 import Staff from "./components/Staff/Staff.jsx";
 import ReactLoading from "react-loading";
+import CardNotification from './components/Notificação/CardNotification.jsx'
 
 function App() {
+  //Informações pertinentes ao sistema de notificação 
+  const [cardNotification, setCardNotification] = useState(false);
+  const [cardNotificationText, setCardNotificationText] = useState();
+
+  //Controle da animação do card
+  const [handleCardNotification, setHandleCardNotification] = useState(true);
+  const [handleStatus, setHandleStatus] = useState();
+
+  console.log(cardNotification)
+
+
+
+
+
+
+  //Dados referente a requisição http da equipe
   const [staffData, setStaffData] = useState([]);
+
   const [IconReload, setIconReload] = useState(true);
 
   //Controle da renderização dos formulários baseado no Click
@@ -38,8 +56,13 @@ function App() {
     <>
       <Header/>
       <Main>
+        {cardNotification && <CardNotification status={handleStatus} text={cardNotificationText} handleCardNotification={handleCardNotification}/>}
         <section>
           <Form 
+            cardNotification={setCardNotification}
+            cardNotificationText={setCardNotificationText}
+            handleCardNotification={setHandleCardNotification}
+            handleStatus={setHandleStatus}
             aoFormAddMemberClick={aoFormAddMemberClick}
             aoCreateTimeClick={aoCreateTimeClick}
             Time={Time}
@@ -67,7 +90,15 @@ function App() {
             ? 
               <p style={{color: "white", textAlign: "center", fontSize: "18px"}}>Não há time cadastrado!</p> 
             :
-              staffData.map(data => {return (<Staff handleStateTimeForm={SetTime}  responseData={data} key={data.id}/>)})
+              staffData.map(data => {return (
+                <Staff 
+                  handleStateTimeForm={SetTime}  
+                  responseData={data} key={data.id}
+                  cardNotification={setCardNotification}
+                  cardNotificationText={setCardNotificationText}
+                  handleCardNotification={setHandleCardNotification}
+                  handleStatus={setHandleStatus}
+                />)})
           }
           
         </section>

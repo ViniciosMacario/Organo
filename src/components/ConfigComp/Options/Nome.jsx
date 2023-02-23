@@ -3,15 +3,10 @@ import Input from '../../Form/Input.jsx'
 import Button from '../../Form/Button.jsx'
 import {Container} from './Nome.js'
 import { useState } from "react";
-import CardNotification from "../../Notificação/CardNotification.jsx"
 
-function Nome({responseData}){
+function Nome({responseData, cardNotification,cardNotificationText,handleCardNotification,handleStatus}){
   const [handleInput, setHandleInput] = useState();
 
-  const [cardNotification, setCardNotification] = useState(false);
-  const [handleCardNotification, setHandleCardNotification] = useState(true);
-  const [handleStatus, setHandleStatus] = useState();
-  const [cardNotificationText, setCardNotificationText] = useState();
     const data = {
       id: responseData.id,
       nome: handleInput,
@@ -29,44 +24,42 @@ function Nome({responseData}){
       },
       body: JSON.stringify(data)
     })
-        setHandleStatus("sucess")
-    setCardNotificationText(`Alterado o nome com Sucesso!`)
+    handleStatus("sucess")
+    cardNotificationText(`Alterado o nome com Sucesso!`)
     
     // renderizando o componente.
-    setCardNotification(true);
+    cardNotification(true);
   
     //Depois de 3s estamos fechando a notificação.
     setTimeout(() =>{
-      setHandleCardNotification(false);
+      handleCardNotification(false);
     }, 3000);
 
     //Depois de 5s estamos desfazendo o componente.
     setTimeout(() =>{
-      setCardNotification(false);
+      cardNotification(false);
     }, 5000);
     }catch(e){
-      setHandleStatus("erro")
-      setCardNotificationText(`Ocorreu um erro na alteração do nome}: ${e}`)
+      handleStatus("erro")
+      cardNotificationText(`Ocorreu um erro na alteração do nome}: ${e}`)
     
       // renderizando o componente.
-      setCardNotification(true);
+      cardNotification(true);
     
       //Depois de 5s estamos fechando a notificação.
       setTimeout(() =>{
-        setHandleCardNotification(false);
+        handleCardNotification(false);
       }, 5000);
 
       //Depois de 5s estamos desfazendo o componente.
       setTimeout(() =>{
-        setCardNotification(false);
+        cardNotification(false);
       }, 7000);
     }
   }
 
   return(
     <Container>
-      {cardNotification && <CardNotification status={handleStatus} text={cardNotificationText} handleCardNotification={handleCardNotification}/>}
-
       <div className="containerInput">
         <Input 
           type="text"

@@ -9,7 +9,7 @@ import Config from '../ConfigComp/Config.jsx'
 import Button from "../Form/Button.jsx"
 
 //Componente responsável por renderizar a Equipe, informando alguns dados referente a mesma como: Cor da Equipe, colaboradores, nome..
-function Staff({responseData, handleStateTimeForm}){
+function Staff({responseData, handleStateTimeForm, cardNotification,cardNotificationText,handleCardNotification,handleStatus}){
   const [configVisible, setConfigVisible] = useState(false);
 
   //controle da visibilidade da sessão e configuração.
@@ -34,7 +34,14 @@ function Staff({responseData, handleStateTimeForm}){
   return (
     <Container style={{background: `${hexToRgba(responseData.color, 0.8)}`}}>
       {/* Menu de configuração da equipe */}
-      {configVisible && <Config responseData={responseData} configExist={configExist}/>}
+      {configVisible && <Config 
+        responseData={responseData} 
+        configExist={configExist}
+        cardNotification={cardNotification}
+        cardNotificationText={cardNotificationText}
+        handleCardNotification={handleCardNotification}
+        handleStatus={handleStatus}
+        />}
 
       <div className='header'>
         <svg width="20" viewBox="0 0 20 20" onClick={configOpen}  xmlns="http://www.w3.org/2000/svg">

@@ -2,15 +2,9 @@ import React, { useState } from "react";
 import TextArea from '../../Form/TextArea.jsx';
 import {Container} from './Descricao.js';
 import Button from '../../Form/Button.jsx';
-import CardNotification from "../../Notificação/CardNotification.jsx"
 
-function Descricao ({responseData}){
-  const [handleDescricao, setHandleDescricao] = useState();
-
-  const [cardNotification, setCardNotification] = useState(false);
-  const [handleCardNotification, setHandleCardNotification] = useState(true);
-  const [handleStatus, setHandleStatus] = useState();
-  const [cardNotificationText, setCardNotificationText] = useState();
+function Descricao ({responseData, cardNotification,cardNotificationText,handleCardNotification,handleStatus}){
+ const[handleDescricao, setHandleDescricao] = useState();
 
   const data = {
     id: responseData.id,
@@ -31,44 +25,42 @@ function Descricao ({responseData}){
         body: JSON.stringify(data)
       })
 
-    setHandleStatus("sucess")
-    setCardNotificationText(`Alterado a descrição com Sucesso!`)
+    handleStatus("sucess")
+    cardNotificationText(`Alterado a descrição com Sucesso!`)
     
     // renderizando o componente.
-    setCardNotification(true);
+    cardNotification(true);
   
     //Depois de 3s estamos fechando a notificação.
     setTimeout(() =>{
-      setHandleCardNotification(false);
+      handleCardNotification(false);
     }, 3000);
 
     //Depois de 5s estamos desfazendo o componente.
     setTimeout(() =>{
-      setCardNotification(false);
+      cardNotification(false);
     }, 5000);
     }catch(e){
-      setHandleStatus("erro")
-      setCardNotificationText(`Ocorreu um erro na alteração da descrição}: ${e}`)
+      handleStatus("erro")
+      cardNotificationText(`Ocorreu um erro na alteração da descrição}: ${e}`)
     
       // renderizando o componente.
-      setCardNotification(true);
+      cardNotification(true);
     
       //Depois de 5s estamos fechando a notificação.
       setTimeout(() =>{
-        setHandleCardNotification(false);
+        handleCardNotification(false);
       }, 5000);
 
       //Depois de 5s estamos desfazendo o componente.
       setTimeout(() =>{
-        setCardNotification(false);
+        cardNotification(false);
       }, 7000);
     }
 
   }
   return(
     <Container>
-      {cardNotification && <CardNotification status={handleStatus} text={cardNotificationText} handleCardNotification={handleCardNotification}/>}
-
       <div className="containerInput">
         <TextArea 
           defaultValue=""
